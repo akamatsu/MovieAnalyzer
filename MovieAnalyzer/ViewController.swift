@@ -21,8 +21,7 @@ class ViewController: UIViewController {
 
     func setupVision() {
         // 機械学習モデルを読み込む
-        if let modelURL = Bundle.main.url(forResource: "YOLOv3", withExtension: "mlmodelc")
-        {
+        if let modelURL = Bundle.main.url(forResource: "YOLOv3", withExtension: "mlmodelc") {
             let mlModel = try! VNCoreMLModel(for: MLModel(contentsOf: modelURL))
             let mlRequest = VNCoreMLRequest(model: mlModel, completionHandler: { (request, error) in
                 // 画像解析結果を処理する
